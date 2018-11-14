@@ -16,7 +16,7 @@ export const createEvent = (data) => ({
 
 export const saveEvent = () => async (dispatch, getState) => {
     const state = getState().selectedEvent
-    const res = await fetch('http://localhost:3000/data', {
+    const res = await fetch('', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
