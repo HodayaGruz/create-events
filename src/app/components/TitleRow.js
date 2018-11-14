@@ -31,15 +31,16 @@ const Title = styled.span`
     flex-grow: 1;
 `;
 
-const TitleRow = ({clearEvent, saveEvent, data}) => (
+const TitleRow = ({clearEvent, saveEvent, data, undo}) => (
     <TitleWrapper>
         <Title>Event & Results</Title>
+        <Button onClick={undo}>Undo</Button>
         <Button onClick={clearEvent}>Clear</Button>
         <Button onClick={data.event ? saveEvent : null}>Submit</Button>
     </TitleWrapper>
 );
 
 const enhance = connect(({selectedEvent}) => ({data: selectedEvent}), 
-    ({clearEvent: actions.clearEvent, saveEvent: actions.saveEvent}))
+    ({clearEvent: actions.clearEvent, saveEvent: actions.saveEvent, undo: actions.undo}))
 
 export default enhance(TitleRow);

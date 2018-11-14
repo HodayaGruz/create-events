@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   setSelectedRow(e, id, type) {
-    console.log('drag start', id)
     e.dataTransfer.setData("data", JSON.stringify({id, type}))
   }
 

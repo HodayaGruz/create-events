@@ -31,13 +31,8 @@ const Diagram = styled(SRD.DiagramWidget).attrs({
 const onDrop = (e, updateEvent, data) => {
     const {id, type} = JSON.parse(e.dataTransfer.getData('data'))
 
-    if (type === 'event'){
+    if (type === 'event' || data.event){
         updateEvent(id, type)
-        return;
-    } 
-    console.log('drag end', id, type, data.event)
-    if (data.event) {
-        updateEvent([...data[type], id], type)
     } else {
         alert('Please select event first.')
     }
