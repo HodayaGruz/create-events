@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import * as SRD from "storm-react-diagrams"
 import * as actions from '../../store/actions';
 
-require("storm-react-diagrams/dist/style.min.css");
+import "storm-react-diagrams/dist/style.min.css";
 
 const Drop = styled.div`
   width: 100%;
